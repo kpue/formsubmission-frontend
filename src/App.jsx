@@ -59,8 +59,8 @@ function App() {
   };
 
   return (
-    <div className="flex-container">
-      <div>{notification}</div>
+    <div>
+      <div className="notification">{notification}</div>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Full Name</label>
@@ -101,7 +101,7 @@ function App() {
             onChange={(event) => setPassword2(event.target.value)}
           />
           {password2 && !(password1 === password2) && (
-            <label>Passwords not equal</label>
+            <label style={{color:"red"}}>Passwords not equal</label>
           )}
         </div>
         <div>

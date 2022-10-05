@@ -12,3 +12,8 @@ select {
   width: 100%;
   display: inline-block;
 }
+.notification {
+  font-weight: bold;
+  background-color: yellow;
+  text-align: center;
+}
