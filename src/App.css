@@ -1,0 +1,14 @@
+input {
+  width: 100%;
+  display: inline-block;
+  border: 1px solid black;
+  padding: 15px 20px;
+  box-sizing: border-box;
+}
+input:focus {
+  background-color: lightyellow;
+}
+select {
+  width: 100%;
+  display: inline-block;
+}
