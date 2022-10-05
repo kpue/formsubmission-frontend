@@ -1,5 +1,5 @@
 # formsubmission-frontend
-A Simple form made with React
+A simple form made with React
 ## Requirements
 
 + Must have [Nodes.js](https://nodejs.org/) installed
