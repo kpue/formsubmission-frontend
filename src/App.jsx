@@ -12,14 +12,6 @@ function App() {
   const [apiData, setApiData] = useState({});
   const [notification, setNotification] = useState(null);
 
-  const clearFormFields = () => {
-    setFullName("");
-    setEmail("");
-    setPassword1("");
-    setPassword2("");
-    setOccupation("");
-    setState("");
-  };
   // Fetch API data
   useEffect(() => {
     fetch(baseURL)
@@ -53,7 +45,7 @@ function App() {
       .then((response) => {
         if (response.status === 200) {
           setNotification("Submission sucessful");
-          clearFormFields();
+          event.target.reset();
         } else {
           setNotification("Submission failed");
         }
@@ -82,71 +74,71 @@ function App() {
           />
         </div>
         <div>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          required
-          onChange={(event) => setEmail(event.target.value)}
-        />
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            onChange={(event) => setEmail(event.target.value)}
+          />
         </div>
         <div>
-        <label htmlFor="password1">Password</label>
-        <input
-          type="password"
-          name="password1"
-          id="password1"
-          required
-          onChange={(event) => setPassword1(event.target.value)}
-        />
+          <label htmlFor="password1">Password</label>
+          <input
+            type="password"
+            name="password1"
+            id="password1"
+            required
+            onChange={(event) => setPassword1(event.target.value)}
+          />
         </div>
         <div>
-        <input
-          type="password"
-          name="password2"
-          required
-          onChange={(event) => setPassword2(event.target.value)}
-        />
-        {password2 && !(password1 === password2) && (
-          <label>Passwords not equal</label>
-        )}
+          <input
+            type="password"
+            name="password2"
+            required
+            onChange={(event) => setPassword2(event.target.value)}
+          />
+          {password2 && !(password1 === password2) && (
+            <label>Passwords not equal</label>
+          )}
         </div>
         <div>
-        <label htmlFor="occupations">Occupation</label>
-        <select
-          name="occupations"
-          id="occupations"
-          required
-          onChange={(event) => setOccupation(event.target.value)}
-        >
-          <option value=""></option>
-          {apiData.occupations &&
-            apiData.occupations.map((occupation) => (
-              <option key={occupation} value={occupation}>
-                {occupation}
-              </option>
-            ))}
-        </select>
+          <label htmlFor="occupations">Occupation</label>
+          <select
+            name="occupations"
+            id="occupations"
+            required
+            onChange={(event) => setOccupation(event.target.value)}
+          >
+            <option value=""></option>
+            {apiData.occupations &&
+              apiData.occupations.map((occupation) => (
+                <option key={occupation} value={occupation}>
+                  {occupation}
+                </option>
+              ))}
+          </select>
         </div>
         <div>
-        <label htmlFor="states">State</label>
-        <select
-          name="states"
-          id="states"
-          required
-          onChange={(event) => setState(event.target.value)}
-        >
-          <option value=""></option>
-          {apiData.states &&
-            apiData.states.map((state) => (
-              <option key={state.name} value={state.name}>
-                {state.name} ({state.abbreviation})
-              </option>
-            ))}
-        </select>
+          <label htmlFor="states">State</label>
+          <select
+            name="states"
+            id="states"
+            required
+            onChange={(event) => setState(event.target.value)}
+          >
+            <option value=""></option>
+            {apiData.states &&
+              apiData.states.map((state) => (
+                <option key={state.name} value={state.name}>
+                  {state.name} ({state.abbreviation})
+                </option>
+              ))}
+          </select>
         </div>
-        <input type="submit" value="Submit" onSubmit={handleSubmit} />
+        <input type="submit" value="Submit" />
       </form>
     </div>
   );
