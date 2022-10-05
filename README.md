@@ -34,7 +34,7 @@ A simple form made with React
          ```
 
 
-## How to run
+## How to test
 ```
 git clone https://github.com/kpue/formsubmission-frontend.git
 cd formsubmission-frontend
