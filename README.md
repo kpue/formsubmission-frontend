@@ -2,7 +2,7 @@
 A simple form made with React
 ## Requirements
 
-+ Must have [Nodes.js](https://nodejs.org/) installed
++ Must have [Node.js](https://nodejs.org/) installed
 + API that handles the following requests
     + GET
     ```
